@@ -2,7 +2,12 @@
 A Chinese sentiment analyze lib with Python
 
 #simple to use：
-##example 
+##example
+
+##first,you can import python lib like this:
+import pos_neg_senti_dict_feature as pn
+import textprocessing as tp
+
 ##for single sentence
 
 print
