@@ -93,28 +93,28 @@ def single_review_sentiment_score(review):
 		negcount = 0 # count a negative word
 
 		for word in seg_sent:
-		    if word in posdict:
-		        poscount += 1
-		        for w in seg_sent[s:i]:
-		           poscount = match(w, poscount)
-		        a = i + 1
-
-		    elif word in negdict:
-		        negcount += 1
-		        for w in seg_sent[s:i]:
-		        	negcount = match(w, negcount)
-		        a = i + 1
+			if word in posdict:
+				poscount += 1
+				for w in seg_sent[s:i]:
+					poscount = match(w, poscount)
+				a = i + 1
+				# 
+			elif word in negdict:
+				negcount += 1
+				for w in seg_sent[s:i]:
+					negcount = match(w, negcount)
+				a = i + 1
 
 		    # Match "!" in the review, every "!" has a weight of +2
-		    elif word == "！".decode('utf8') or word == "!".decode('utf8'):
-		        for w2 in seg_sent[::-1]:
-		            if w2 in posdict:
-		            	poscount += 2
-		            	break
-		            elif w2 in negdict:
-		                negcount += 2
-		                break                    
-		    i += 1
+			elif word == "！" or word == "!":
+				for w2 in seg_sent[::-1]:
+					if w2 in posdict:
+						poscount += 2
+						break
+					elif w2 in negdict:
+						negcount += 2
+						break                    
+			i += 1
 
 		single_review_senti_score.append(transform_to_positive_num(poscount, negcount))
 		review_sentiment_score = sumup_sentence_sentiment_score(single_review_senti_score)
