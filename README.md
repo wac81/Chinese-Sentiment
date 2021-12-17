@@ -5,10 +5,10 @@ A Chinese sentiment analyze lib with Python
 ## example
 
 ## first,you can import python lib like this:
-`
+```
 import pos_neg_senti_dict_feature as pn
 import textprocessing as tp
-`
+```
 
 ## for single sentence
 
