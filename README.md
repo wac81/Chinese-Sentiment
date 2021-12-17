@@ -18,6 +18,7 @@ pn.single_review_sentiment_score('买过散装的粽子才来买礼盒的，礼�
 
 
 ## for all dataset
-`for i in pn.all_review_sentiment_score(pn.sentence_sentiment_score(review)):
+```
+for i in pn.all_review_sentiment_score(pn.sentence_sentiment_score(review)):
 	print i
-`
+```
